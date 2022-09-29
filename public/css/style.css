@@ -1,0 +1,20 @@
+*{
+  text-decoration: none !important;
+}
+
+body{
+  background-color: #f3f3f3 !important;
+  font-family: "Poppins", sans-serif !important;
+}
+
+.bg-orange{
+  background-color: #fe4e30 !important;
+}
+
+.text-white{
+  color: white !important;
+}
+
+.text-black{
+  color: rgb(0, 0, 0) !important;
+}

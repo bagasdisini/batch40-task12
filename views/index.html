@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/public/css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous" />
+  <link rel="icon" href="/public/image/image.jpg" type="image/jpg" />
+  <title>Home</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg bg-light shadow-sm p-2 mb-5 bg-body rounded">
+    <div class="container">
+      <a class="navbar-brand" href="/"><img src="https://dumbways.id/assets/images/brandred.png" alt="logo"
+          width="50px" /></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active fw-bold" aria-current="page" href="/">Home</a>
+          </li>
+          {{if .DataSession.IsLogin}}
+          <li class="nav-item">
+            <a class="nav-link" href="add-project">Add Project</a>
+          </li>
+          {{end}}
+        </ul>
+
+        {{if .DataSession.IsLogin}}
+        <ul class="navbar-nav me-3 mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a href="#" class="nav-link">Hallo, {{.DataSession.Username}}</a>
+          </li>
+          <li class="nav-item">
+            <a href="/logout" class="nav-link">Logout</a>
+          </li>
+        </ul>
+        {{else}}
+        <ul class="navbar-nav me-3 mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a href="/form-register" class="nav-link">Register</a>
+          </li>
+          <li class="nav-item">
+            <a href="/form-login" class="nav-link">Login</a>
+          </li>
+        </ul>
+        {{end}}
+
+        <a href="contact" class="btn bg-orange text-white rounded-pill">Contact Me</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container d-flex justify-content-center align-items-center">
+    <div class="container card d-flex flex-row justify-content-center shadow p-5 mb-5 bg-body rounded-4 px-5">
+      <div class="card-body" style="width: 250px">
+        <h4 class="card-title mb-3 fw-bold">Never Gonna Give You Up!</h4>
+        <p class="card-text mb-4" style="text-align: justify; width: 90%">
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo aut in
+          numquam distinctio velit fugit quaerat, alias, at officiis earum
+          quidem corporis minus inventore! Hic vero perferendis praesentium
+          impedit odit, laudantium inventore id? Sed labore velit in incidunt
+          non, optio ipsum commodi blanditiis sapiente quibusdam molestias
+          necessitatibus tempore eveniet. Quo optio id ad. Facilis expedita
+          blanditiis, tempora facere quam, tenetur non quibusdam nemo ad odit
+          cum natus quae deleniti aperiam ea laudantium. Atque autem
+          aspernatur temporibus! Soluta odit itaque, eveniet blanditiis aut
+          non minus tempore exercitationem laudantium tenetur vero dolores
+          temporibus quos perspiciatis corrupti deleniti fuga numquam amet
+          sint expedita?.
+        </p>
+        <div class="mb-4">
+          <a href="contact" class="btn bg-orange text-white rounded-pill me-3">Contact</a>
+          <a href="#" class="text-black">Download CV <i class="fa-solid fa-download"></i></a>
+        </div>
+        <div class="fs-2">
+          <a href="#"><i class="fa-brands fa-linkedin me-3 text-black"></i></a>
+          <a href="#"><i class="fa-brands fa-square-instagram me-3 text-black"></i></a>
+          <a href="#"><i class="fa-brands fa-square-facebook me-3 text-black"></i></a>
+          <a href="#"><i class="fa-brands fa-square-twitter me-3 text-black"></i></a>
+        </div>
+      </div>
+      <div class="card align-self-start shadow mb-5 bg-body rounded-4" style="width: 250px">
+        <img src="/public/image/image.jpg" class="card-img-top rounded-4" alt="foto" width="150px" />
+        <div class="card-body">
+          <h5 class="card-title fw-bold" style="text-align: center">
+            Rick Astley
+          </h5>
+          <p class="card-text" style="text-align: center">
+            Professional Singer
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr style="
+        width: 80%;
+        margin-left: 10% !important;
+        margin-right: 10% !important;
+      " />
+  <div>
+    <h3 class="fw-bold my-5" style="text-align: center">My Project</h3>
+  </div>
+  <div class="d-flex justify-content-evenly flex-wrap m-5">
+    {{range $index, $data := .Project}}
+    <div class="card mb-5 mx-3 rounded-4 shadow mb-5 bg-body rounded-4" style="width: 20rem">
+      <a href="detail-project/{{$data.ID}}"><img src="/uploads/{{$data.Image}}" class="card-img-top rounded-4"
+          alt="foto" style="width: 100%; height: 200px; object-fit: cover" /></a>
+      <div class="card-body">
+        <a href="detail-project/{{$data.ID}}">
+          <h6 class="card-title fw-bold text-black">{{$data.ProjectName}}</h6>
+        </a>
+        <small>Duration : {{$data.Duration}}</small>
+        <p class="card-text fs-6 my-3" style="text-align: justify">
+          {{$data.Description}}
+        </p>
+        <div class="mb-3 fs-5">
+          {{range $index, $tech := $data.Technologies}}
+          <i class="fa-brands fa-{{$tech}} me-3"></i>
+          {{end}}
+        </div>
+        <button type="button" class="btn bg-orange text-white btn-sm rounded-pill"><a href="/edit-project/{{$data.ID}}"
+            class="text-white">
+            Edit</a>
+        </button>
+        <button type="button" class="btn bg-orange btn-sm rounded-pill" action><a href="/delete-project/{{$data.ID}}"
+            class="text-white">
+            Delete
+          </a>
+        </button>
+      </div>
+    </div>
+    {{end}}
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

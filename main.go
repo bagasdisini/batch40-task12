@@ -187,7 +187,7 @@ func blogDetail(w http.ResponseWriter, r *http.Request) {
 
 	id, _ := strconv.Atoi(mux.Vars(r)["id"])
 
-	error = connection.Conn.QueryRow(context.Background(), "SELECT name, start_date, end_date, description, duration, technologies FROM tb_blog WHERE id=$1", id).Scan(&BlogDetail.ProjectName, &BlogDetail.StartDate, &BlogDetail.EndDate, &BlogDetail.Description, &BlogDetail.Duration, &BlogDetail.Technologies)
+	error = connection.Conn.QueryRow(context.Background(), "SELECT name, start_date, end_date, description, duration, technologies, image FROM tb_blog WHERE id=$1", id).Scan(&BlogDetail.ProjectName, &BlogDetail.StartDate, &BlogDetail.EndDate, &BlogDetail.Description, &BlogDetail.Duration, &BlogDetail.Technologies, &BlogDetail.Image)
 
 	if error != nil {
 		w.WriteHeader(http.StatusInternalServerError)
